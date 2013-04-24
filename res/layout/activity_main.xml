@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity" >
+    
+    <Button
+        android:id="@+id/startStopButton"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/main_switch"
+        android:layout_marginTop="20dp"
+        android:text="@string/connecting"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/gripperText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startStopButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:text="@string/gripper_control"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/gripperOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/startStopButton"
+        android:layout_below="@id/gripperText"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:text="@string/open_gripper"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <TextView
+        android:id="@+id/gripperClosed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/startStopButton"
+        android:layout_below="@id/gripperText"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:text="@string/close_gripper"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <SeekBar
+        android:id="@+id/gripperBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gripperClosed"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:max="100"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/lockButton"
+        android:layout_width="53dp"
+        android:layout_height="75dp"
+        android:layout_alignLeft="@+id/startStopButton"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/lock_axis_button"
+        android:onClick="lockAxis" />
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBaseline="@+id/lockButton"
+        android:layout_alignBottom="@+id/lockButton"
+        android:layout_alignRight="@+id/startStopButton"
+        android:background="@drawable/home_button" />
+
+    <Switch
+        android:id="@+id/main_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lockButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:switchTextAppearance="@style/SwitchText"
+        android:textOff="Arm Mode"
+        android:textOn="Wrist Mode" />
+
+    <TextView
+        android:id="@+id/playback_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/homeButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/playback"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/record"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/playback_text"
+        android:layout_below="@+id/playback_text"
+        android:onClick="recordState"
+        android:background="@drawable/record" />
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/playback_text"
+        android:layout_marginTop="28dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="playbackStates"
+        android:background="@drawable/play_button_2" />
+
+    <Button
+        android:id="@+id/trash"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignRight="@+id/playback_text"
+        android:layout_alignTop="@+id/record"
+        android:layout_marginRight="3dp"
+        android:onClick="trashState"
+        android:background="@drawable/trash" />
+
+</RelativeLayout>
